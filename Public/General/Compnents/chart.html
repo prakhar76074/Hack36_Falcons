@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Crime Index'],
+          ['Germany', 36.37],
+          ['United States', 48.16],
+          ['Brazil', 67.01],
+          ['Canada', 42.95],
+          ['France', 52.41],
+          ['Pakistan', 42.01 ],
+          ['India', 44.63],
+          ['United Kingdom',46.47],
+          ['Russia',39.62],
+          ['Australia',43.85],
+          ['Venezuela',83.58],
+          ['China',56.45]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body style="background-color: rgb(127, 136, 255);">
+    
+    <h1 class="flex justify-center items-center text-3xl top-10">Crime Index of Different Country of year 2022</h1>
+      <div class=" flex justify-center items-center">
+         
+          <div>
+              <br>
+              <br>
+             
+              <br>
+    <div id="regions_div" style="width: 900px; height: 500px; "></div>
+
+    <br>
+    <hr>
+    <br>
+    <h1 class="flex justify-center items-center text-3xl">Most Crime that happens in India</h1>
+    <br>
+    <p><a href="https://en.wikipedia.org/wiki/File:Crime_in_India_from_1953_to_2007.png#/media/File:Crime_in_India_from_1953_to_2007.png"><img src="https://upload.wikimedia.org/wikipedia/en/2/27/Crime_in_India_from_1953_to_2007.png" alt="Crime in India from 1953 to 2007.png"></a><br> <a href="https://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-ShareAlike 3.0"></a>, <a href="https://en.wikipedia.org/w/index.php?curid=25008061"></a></p>
+
+
+    <br>
+    <hr>
+    <br>
+   
+   
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'India', 'Uttar Pradesh', 'Kerala', 'Delhi', 'Maharastra'],
+          ['2016',  4831515,      494025,      707870   ,             216920,        430866],
+          ['2017',  5007044,      600082,       653500,             249734,          468493],
+          ['2018',  5074635,      585157,       587758,             268074,           503689],
+          ['2019',  5156172,      628578,        519515,             289685,           549364],
+          ['2020',  5174635,      641945,        487629,             321026,          573084]
+        ]);
+
+        var options = {
+          title : 'Approx No. of Crimes in India and some states ',
+          vAxis: {title: 'Crime Number'},
+          hAxis: {title: 'Year'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    <h1 class="flex justify-center items-center text-3xl">Comparison of Crime between Different States of India</h1>
+    <br>
+    <br>
+  
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+    <br>
+    <br>
+    <br>
+  </body>
+</html>
